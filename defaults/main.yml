@@ -1,0 +1,3 @@
+---
+yum_mirrors_epel_enabled: false
+yum_mirrors_epel:  ""
