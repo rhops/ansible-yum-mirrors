@@ -10,7 +10,13 @@
 
 - name: use epel mirror
   template:
-    src: epel.repo.j2
+    src: etc/yum.repos.d/epel.repo.j2
     dest: /etc/yum.repos.d/epel.repo
     mode: 0644
-  when: yum_mirrors_epel_enabled and yum_mirrors_epel
+  when: yum_mirrors_epel_enabled
+
+- name: use base mirror
+  template:
+    src: etc/yum.repos.d/CentOS-Base.repo.j2
+    dest: /etc/yum.repos.d/CentOS-Base.repo
+    mode: 0644

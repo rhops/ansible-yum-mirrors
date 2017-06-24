@@ -1,6 +1,6 @@
 [epel]
 name=Extra Packages for Enterprise Linux 7 - $basearch
-{% if yum_mirrors_epel_enabled and yum_mirrors_epel %}
+{% if yum_mirrors_epel is defined %}
 baseurl={{ yum_mirrors_epel  }}/$releasever/$basearch
 {% else %}
 #baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
@@ -13,11 +13,11 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 
 [epel-debuginfo]
 name=Extra Packages for Enterprise Linux 7 - $basearch - Debug
-{% if yum_mirrors_epel_enabled and yum_mirrors_epel %}
-baseurl={{ yum_mirrors_epel  }}/$releasever/$basearch
+{% if yum_mirrors_epel is defined %}
+baseurl={{ yum_mirrors_epel }}/7/$basearch/debug
 {% else %}
-#baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
-mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+#baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch/debug
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-debug-7&arch=$basearch
 {% endif %}
 failovermethod=priority
 enabled=0
@@ -26,11 +26,11 @@ gpgcheck=1
 
 [epel-source]
 name=Extra Packages for Enterprise Linux 7 - $basearch - Source
-{% if yum_mirrors_epel_enabled and yum_mirrors_epel %}
-baseurl={{ yum_mirrors_epel  }}/$releasever/$basearch
+{% if yum_mirrors_epel is defined %}
+baseurl={{ yum_mirrors_epel }}/7/SRPMS
 {% else %}
-#baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
-mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+#baseurl=http://download.fedoraproject.org/pub/epel/7/SRPMS
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-source-7&arch=$basearch
 {% endif %}
 failovermethod=priority
 enabled=0
