@@ -19,7 +19,7 @@ mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo
 #baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
 {% endif %}
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-{{ ansible_distribution_major_version }}
 
 #released updates 
 [updates]
@@ -31,7 +31,7 @@ mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo
 #baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
 {% endif %}
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-{{ ansible_distribution_major_version }}
 
 #additional packages that may be useful
 [extras]
@@ -43,7 +43,7 @@ mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo
 #baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
 {% endif %}
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-{{ ansible_distribution_major_version }}
 
 #additional packages that extend functionality of existing packages
 [centosplus]
@@ -56,5 +56,5 @@ mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo
 {% endif %}
 gpgcheck=1
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-{{ ansible_distribution_major_version }}
 
