@@ -1,4 +1,11 @@
 ---
+# Make sure python selinux is installed which is mandatory
+# to run Ansible tasks
+- name: install python selinux dependency
+  yum:
+    name: libselinux-python
+    state: present
+
 # Install epel repo files from Extra repo.
 # The main purpose of this task is to install the key,
 # So make sure you install this from the trusted source.
