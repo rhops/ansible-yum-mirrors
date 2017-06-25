@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Jeff Li
-  description: Configure yum base and EPEL mirrors
+  description: Configure CentOS yum base and EPEL mirrors
   license: MIT
   min_ansible_version: 2.1
   platforms:
